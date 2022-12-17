@@ -1,0 +1,23 @@
+{
+  "name": "React-redux-authenticate-me-full-stack-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "backend": "npm start --prefix ./backend",
+    "frontend": "npm start --prefix ./frontend",
+    ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Doo1y/React-redux-authenticate-me-full-stack-project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Doo1y/React-redux-authenticate-me-full-stack-project/issues"
+  },
+  "homepage": "https://github.com/Doo1y/React-redux-authenticate-me-full-stack-project#readme"
+}
