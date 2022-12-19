@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 const express = require('express'),
   morgan = require('morgan'),
   cors = require('cors'),
@@ -55,6 +54,7 @@ app.use((err, _req, _res, next) => {
     err.errors = err.errors.map((e) => e.message);
     err.title = 'Validation error';
   }
+  22;
   next(err);
 });
 
