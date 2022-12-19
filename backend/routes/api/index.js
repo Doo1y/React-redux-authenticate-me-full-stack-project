@@ -1,6 +1,12 @@
 /*eslint-env es6*/
 // backend/routes/api/index.js
 const router = require('express').Router();
+const sessionRouter = require('./session.js');
+const usersRouter = require('./users.js');
+
+router.use('/session', sessionRouter);
+
+router.use('/users', usersRouter);
 
 // test API Router
 router.post('/test', (req, res) => {
@@ -9,9 +15,8 @@ router.post('/test', (req, res) => {
 
 
 
-/*
+/* ***************** User Auth Middleware Test Routes **************************
 
-// User authentication test Router
 const asyncHandler = require('express-async-handler');
 const { setTokenCookie } = require('../../utils/auth');
 const { User } = require('../../db/models');
@@ -42,7 +47,7 @@ router.get(
   }
 );
 
-*/
+***************************************************************************** */
 
 
 module.exports = router;
