@@ -6,8 +6,12 @@ import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 
 import store from "./store";
+import csrfFetch, { restoreCSRF } from "./store/csrf";
 
-if (ProcessingInstruction.env.NODE_ENV !== "production") {
+if (process.env.NODE_ENV !== "production") {
+  restoreCSRF();
+
+  window.csrfFetch = csrfFetch;
   window.store = store;
 }
 

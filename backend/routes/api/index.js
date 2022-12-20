@@ -1,19 +1,12 @@
 /*eslint-env es6*/
 // backend/routes/api/index.js
-const router = require('express').Router();
-const sessionRouter = require('./session.js');
-const usersRouter = require('./users.js');
+const router = require("express").Router();
+const sessionRouter = require("./session.js");
+const usersRouter = require("./users.js");
 
-router.use('/session', sessionRouter);
+router.use("/session", sessionRouter);
 
-router.use('/users', usersRouter);
-
-// test API Router
-router.post('/test', (req, res) => {
-  res.json({ requestBody: req.body });
-});
-
-
+router.use("/users", usersRouter);
 
 /* ***************** User Auth Middleware Test Routes **************************
 
@@ -48,6 +41,5 @@ router.get(
 );
 
 ***************************************************************************** */
-
 
 module.exports = router;
