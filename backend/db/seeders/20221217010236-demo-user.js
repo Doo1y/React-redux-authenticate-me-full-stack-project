@@ -1,5 +1,5 @@
-'use strict';
-const bcrypt = require('bcryptjs');
+"use strict";
+const bcrypt = require("bcryptjs");
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
@@ -14,23 +14,23 @@ module.exports = {
       }], {});
     */
     return queryInterface.bulkInsert(
-      'Users',
+      "Users",
       [
         {
-          email: 'demo@user.io',
-          username: 'Demo-lition',
-          hashedPassword: bcrypt.hashSync('password')
+          email: "demo@user.io",
+          username: "Demo-lition",
+          hashedPassword: bcrypt.hashSync("password"),
         },
         {
-          email: 'user1@user.io',
-          username: 'FakeUser1',
-          hashedPassword: bcrypt.hashSync('password2')
+          email: "user1@user.io",
+          username: "FakeUser1",
+          hashedPassword: bcrypt.hashSync("password2"),
         },
         {
-          email: 'user2@user.io',
-          username: 'FakeUser2',
-          hashedPassword: bcrypt.hashSync('password3')
-        }
+          email: "user2@user.io",
+          username: "FakeUser2",
+          hashedPassword: bcrypt.hashSync("password3"),
+        },
       ],
       {}
     );
@@ -46,11 +46,11 @@ module.exports = {
     */
     const Op = Sequelize.Op;
     return queryInterface.bulkDelete(
-      'Users',
+      "Users",
       {
-        username: { [Op.in]: ['Demo-lition', 'FakeUser1', 'FakeUser2'] }
+        username: { [Op.in]: ["Demo-lition", "FakeUser1", "FakeUser2"] },
       },
       {}
     );
-  }
+  },
 };

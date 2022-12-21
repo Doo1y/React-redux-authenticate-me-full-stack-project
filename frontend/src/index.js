@@ -6,18 +6,21 @@ import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 
 import store from "./store";
-import csrfFetch, { restoreCSRF } from "./store/csrf";
+import { restoreCSRF, csrfFetch } from './store/csrf';
+
+import * as sessionActions from './store/session';
 
 if (process.env.NODE_ENV !== "production") {
   restoreCSRF();
 
   window.csrfFetch = csrfFetch;
   window.store = store;
+  window.sessionActions = sessionActions;
 }
 
 const Root = () => {
   return (
-    <Provider store={store}>
+    <Provider store={ store }>
       <BrowserRouter>
         <App />
       </BrowserRouter>
