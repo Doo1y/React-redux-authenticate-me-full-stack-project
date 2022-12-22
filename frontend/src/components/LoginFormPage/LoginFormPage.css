@@ -1,9 +1,11 @@
+body {
+  display: flex;
+  justify-content: center;
+}
+
 form {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 80vh;
-  flex-direction: column;
-  position: relative;
-  top: 70px;
+  justify-content: space-around;
+  flex-flow: column;
+  width: 147px;
 }
