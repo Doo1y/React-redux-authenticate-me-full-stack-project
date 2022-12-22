@@ -1,7 +1,7 @@
-import { csrfFetch } from "./csrf";
+import { csrfFetch } from './csrf';
 
-const SET_USER = "session/setUser";
-const REMOVE_USER = "session/removeUser";
+const SET_USER = 'session/setUser';
+const REMOVE_USER = 'session/removeUser';
 
 const setUser = (user) => {
   return {
@@ -10,7 +10,7 @@ const setUser = (user) => {
   };
 };
 
-const removeUser = () => {
+export const logout = () => {
   return {
     type: REMOVE_USER,
   };
@@ -19,11 +19,11 @@ const removeUser = () => {
 export const login = (user) => async (dispatch) => {
   const { credential, password } = user;
 
-  const res = await csrfFetch("/api/session", {
-    method: "POST",
+  const res = await csrfFetch('/api/session', {
+    method: 'POST',
     body: JSON.stringify({
       credential,
-      password
+      password,
     }),
   });
 
