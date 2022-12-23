@@ -16,6 +16,25 @@ const logout = () => {
   };
 };
 
+const initialState = { user: null };
+
+const sessionReducer = (state = initialState, action) => {
+  let newState;
+
+  switch (action.type) {
+    case SET_USER:
+      newState = Object.assign({}, state);
+      newState.user = action.payload;
+      return newState;
+    case REMOVE_USER:
+      newState = Object.assign({}, state);
+      newState.user = null;
+      return newState;
+    default:
+      return state;
+  }
+};
+
 export const login = (user) => async (dispatch) => {
   const { credential, password } = user;
 
@@ -29,6 +48,15 @@ export const login = (user) => async (dispatch) => {
 
   const data = await res.json();
   dispatch(setUser(data.user));
+  return res;
+};
+
+export const logoutUser = () => async (dispatch) => {
+  const res = await csrfFetch('/api/session', {
+    method: 'DELETE',
+  });
+
+  dispatch(logout());
   return res;
 };
 
@@ -56,25 +84,6 @@ export const signup = (user) => async (dispatch) => {
   const data = await res.json();
   dispatch(setUser(data.user));
   return res;
-};
-
-const initialState = { user: null };
-
-const sessionReducer = (state = initialState, action) => {
-  let newState;
-
-  switch (action.type) {
-    case SET_USER:
-      newState = Object.assign({}, state);
-      newState.user = action.payload;
-      return newState;
-    case REMOVE_USER:
-      newState = Object.assign({}, state);
-      newState.user = null;
-      return newState;
-    default:
-      return state;
-  }
 };
 
 export default sessionReducer;
