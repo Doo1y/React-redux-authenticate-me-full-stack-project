@@ -1,20 +1,20 @@
 #modal {
+  align-items: center;
   display: flex;
+  inset: 0 0 0 0;
   position: fixed;
-  width: max-content;
-  height: max-content;
-  background-color: white;
+  justify-content: center;
 }
 
 #modal-background {
+  background-color: rgba(0, 0, 0, 0.5);
+  inset: 0 0 0 0;
   position: absolute;
-  width: max-content;
-  height: max-content;
-  background-color: rgba(0, 0, 0, 0.7);
 }
 
 #modal-content {
-  align-self: center;
-  justify-self: center;
+  background-color: white;
   position: absolute;
+  padding: 30px 16px;
+  border-radius: 5px;
 }

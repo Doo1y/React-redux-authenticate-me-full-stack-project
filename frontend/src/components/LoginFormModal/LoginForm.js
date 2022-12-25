@@ -1,17 +1,13 @@
 import React, { useState } from 'react';
 import * as sessionActions from '../../store/session';
-import { useDispatch, useSelector } from 'react-redux';
-import { Redirect } from 'react-router-dom';
-import './LoginFormPage.css';
+import { useDispatch } from 'react-redux';
+import './LoginFormModal.css';
 
-const LoginFormPage = () => {
+const LoginForm = () => {
   const dispatch = useDispatch();
-  const isLoggedIn = useSelector((state) => state.session.user);
   const [credential, setCred] = useState('');
   const [password, setPassword] = useState('');
   const [err, setErr] = useState([]);
-
-  if (isLoggedIn) return <Redirect to='/' />;
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -25,32 +21,34 @@ const LoginFormPage = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form id='login-form' onSubmit={handleSubmit}>
       <label>
-        username/email:
+        Username or Email:
         <input
           autoComplete='off'
           type='text'
-          id='cred'
+          id='login-cred'
           value={credential}
           onChange={(e) => setCred(e.target.value)}
           required
         />
       </label>
       <label>
-        password:
+        Password:
         <input
           autoComplete='off'
           type='password'
-          id='password'
+          id='login-password'
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
         />
       </label>
-      <button type='submit'>Login</button>
+      <button type='submit' id='login-button'>
+        Sign In
+      </button>
     </form>
   );
 };
 
-export default LoginFormPage;
+export default LoginForm;

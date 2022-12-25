@@ -9,7 +9,7 @@ import store from './store';
 import { restoreCSRF, csrfFetch } from './store/csrf';
 
 import * as sessionActions from './store/session';
-import ModalProvider from './context/Modal';
+import { ModalProvider } from './context/Modal';
 
 if (process.env.NODE_ENV !== 'production') {
   restoreCSRF();
@@ -21,13 +21,13 @@ if (process.env.NODE_ENV !== 'production') {
 
 const Root = () => {
   return (
-    <ModalProvider>
-      <Provider store={store}>
+    <Provider store={store}>
+      <ModalProvider>
         <BrowserRouter>
           <App />
         </BrowserRouter>
-      </Provider>
-    </ModalProvider>
+      </ModalProvider>
+    </Provider>
   );
 };
 
