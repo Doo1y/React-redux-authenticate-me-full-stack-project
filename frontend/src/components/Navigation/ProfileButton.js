@@ -44,7 +44,7 @@ const ProfileButton = ({ user }) => {
   }, [isDisplayed]);
 
   return (
-    <>
+    <div className='dropdown'>
       <button className='dropdown' onClick={handleDropdown}>
         <i className='fas fa-user-circle' />
       </button>
@@ -57,7 +57,7 @@ const ProfileButton = ({ user }) => {
           </li>
         </ul>
       )}
-    </>
+    </div>
   );
 };
 

@@ -29,6 +29,7 @@ const LoginFormPage = () => {
       <label>
         username/email:
         <input
+          autoComplete='off'
           type='text'
           id='cred'
           value={credential}
@@ -39,6 +40,7 @@ const LoginFormPage = () => {
       <label>
         password:
         <input
+          autoComplete='off'
           type='password'
           id='password'
           value={password}

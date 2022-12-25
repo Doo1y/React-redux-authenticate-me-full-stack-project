@@ -34,6 +34,7 @@ const SignupFormPage = () => {
       <label>
         Username:
         <input
+          autoComplete='off'
           id='username'
           onChange={(e) => setUsername(e.target.value)}
           required
@@ -44,6 +45,7 @@ const SignupFormPage = () => {
       <label>
         Email:
         <input
+          autoComplete='off'
           id='email'
           onChange={(e) => setEmail(e.target.value)}
           required
@@ -54,6 +56,7 @@ const SignupFormPage = () => {
       <label>
         Password:
         <input
+          autoComplete='off'
           id='password'
           onChange={(e) => setPassword(e.target.value)}
           required
@@ -64,6 +67,7 @@ const SignupFormPage = () => {
       <label>
         Confirm Password:
         <input
+          autoComplete='off'
           id='validate'
           onChange={(e) => setPasswordValidation(e.target.value)}
           required
